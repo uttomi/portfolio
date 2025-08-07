@@ -1,12 +1,14 @@
-'use client';
+"use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function SobreMi() {
   return (
-    <section className="w-full bg-[#132238] text-white mt-4 px-6 py-12 md:px-12 lg:px-24 xl:px-32 md:min-h-screen flex items-center" id="sobre-mi">
+    <section
+      className="w-full bg-[#132238] text-white mt-16 md:mt-4 px-6 py-12 md:px-12 lg:px-24 xl:px-32 md:min-h-screen flex items-center"
+      id="sobre-mi"
+    >
       <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1.5fr] gap-6 md:gap-16 w-full max-w-7xl mx-auto">
-        
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

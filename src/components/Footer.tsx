@@ -12,7 +12,8 @@ export default function Footer() {
   return (
     <footer className="bg-[#132238] text-white w-full py-8 px-4 font-poppins">
       <div className="max-w-7xl mx-auto flex flex-col gap-8">
-        <nav className="flex gap-6 overflow-x-auto scrollbar-none text-sm justify-center md:justify-center">
+        <nav className="hidden md:flex gap-6 overflow-x-auto scrollbar-none text-sm justify-center">
+          {" "}
           <Link
             href="#sobre-mi"
             className="hover:underline whitespace-nowrap transition"
