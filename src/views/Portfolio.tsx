@@ -7,7 +7,6 @@ import Download from "@/components/Download";
 export default function Portfolio() {
   return (
     <>
-     <h1>hola mi porftolio</h1>
      <SobreMi/>
      <Download/>
      <Tecnologias/>
