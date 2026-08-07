@@ -43,7 +43,7 @@ export const PROJECTS: Project[] = [
       "Herramienta desktop para optimizar el proceso de cotización. Permite cargar productos, generar presupuestos personalizados, guardarlos e imprimirlos.",
     image: "/imgAlFe.png",
     tags: ["C#", "HTML5", "CSS3", "JavaScript"],
-    link: "https://www.linkedin.com/posts/tomasagustinulman_nuevo-proyecto-publicado-sistema-de-presupuestos-activity-7315814299656945665-OuC1",
+    link: "https://www.linkedin.com/posts/tomas-ulman_nuevo-proyecto-publicado-sistema-de-presupuestos-activity-7315814299656945665-OuC1",
   },
   {
     id: "safestock",
