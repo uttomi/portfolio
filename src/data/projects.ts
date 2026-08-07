@@ -24,7 +24,7 @@ export const PROJECTS: Project[] = [
       "ARCA API",
       "AI OCR",
     ],
-    link: "https://www.linkedin.com/posts/tomas-ulman_hace-mucho-no-publico-por-ac%C3%A1-hoy-vuelvo-activity-7462629849300410368-2EPb?utm_source=share&utm_medium=member_desktop&rcm=ACoAADXkflUB1KLK1BlkvbtS8HDrTkf6MC6qCqI",
+    link: "https://www.linkedin.com/posts/tomas-ulman_hace-mucho-no-publico-por-ac%C3%A1-hoy-vuelvo-activity-7462629849300410368-2EPb",
   },
   {
     id: "alulm-fe-v2",
@@ -53,6 +53,6 @@ export const PROJECTS: Project[] = [
       "Aplicación web desarrollada durante el bootcamp de Soy Henry para la gestión de inventario en PyMEs, control de stock y alertas de reposición.",
     image: "/imgSafeStock.png",
     tags: ["React", "TypeScript", "Tailwind CSS", "Node.js"],
-    link: "https://www.linkedin.com/posts/tomasagustinulman_proyecto-final-durante-el-desaf%C3%ADo-grupal-activity-7336136787758583812-uJPA",
+    link: "https://www.linkedin.com/posts/tomas-ulman_proyecto-final-durante-el-desaf%C3%ADo-grupal-activity-7336136787758583812-uJPA",
   },
 ];

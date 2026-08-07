@@ -28,12 +28,16 @@ export default function Projects() {
             className="group relative p-6 sm:p-8 rounded-2xl bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 transition-all duration-300 flex flex-col md:flex-row gap-6 md:gap-8 items-start"
           >
             {project.image && (
-              <div className="relative w-full md:w-64 h-44 rounded-xl overflow-hidden bg-slate-800/60 border border-slate-700/40 flex-shrink-0">
+              <div className="relative w-full md:w-64 h-44 rounded-xl overflow-hidden bg-slate-950/80 border border-slate-800 flex items-center justify-center flex-shrink-0">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  className={
+                    project.image.endsWith(".svg")
+                      ? "object-contain p-6"
+                      : "object-cover"
+                  }
                 />
               </div>
             )}
