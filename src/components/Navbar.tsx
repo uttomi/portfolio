@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const navLinks = [
+const NAV_LINKS = [
   { href: "#sobre-mi", label: "Sobre Mi" },
   { href: "#tecnologias", label: "Tecnologías" },
   { href: "#experiencias", label: "Experiencias" },
@@ -15,89 +15,71 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (!isOpen) {
-        setShowNavbar(currentScrollY < lastScrollY || currentScrollY < 50);
-      }
-      setLastScrollY(currentScrollY);
+      setScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY, isOpen]);
-
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "auto";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isOpen]);
+  }, []);
 
   return (
-    <motion.nav
-      className="fixed top-0 left-0 w-full bg-[#132238] px-6 py-4 flex items-center justify-between z-50"
-      initial={{ y: -100 }}
-      animate={{ y: showNavbar ? 0 : -100 }}
-      transition={{ duration: 0.3 }}
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-slate-950/80 backdrop-blur-md border-b border-slate-800/60 py-3"
+          : "bg-transparent py-5"
+      }`}
     >
-      <div className="md:hidden">
-        <button onClick={() => setIsOpen(true)}>
-          <Menu size={30} color="white" className="cursor-pointer text-white"/>
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <a href="#sobre-mi" className="flex items-center gap-2">
+          <Image src="/logo.svg" alt="Logo" width={36} height={36} />
+        </a>
+
+        <nav className="hidden md:flex items-center gap-8">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-slate-300 hover:text-white"
+          aria-label="Toggle Menu"
+        >
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
-      </div>
-
-      <div className="flex-shrink-0">
-        <Image src="/logo.svg" alt="Logo" width={50} height={50} />
-      </div>
-
-      <div className="hidden md:flex space-x-8 font-poppins text-white text-lg">
-        {navLinks.map(({ href, label }) => (
-          <motion.a
-            key={href}
-            href={href}
-            whileHover={{ scale: 1.1, color: "#A4BCE5" }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="cursor-pointer"
-          >
-            {label}
-          </motion.a>
-        ))}
       </div>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ x: "-100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "-100%" }}
-            transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
-            className="fixed top-0 left-0 h-full w-[80%] bg-[#132238] p-6 z-50 flex flex-col space-y-6 font-poppins text-white text-xl"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-slate-950 border-b border-slate-800 px-6 py-6 space-y-4"
           >
-            <div className="flex justify-between items-center mb-6">
-              <span className="text-white font-semibold text-lg">Menú</span>
-              <button onClick={() => setIsOpen(false)} className="cursor-pointer">
-                <X size={28} color="white" className="cursor-pointer text-white" />
-              </button>
-            </div>
-
-            {navLinks.map(({ href, label }) => (
+            {NAV_LINKS.map((link) => (
               <a
-                key={href}
-                href={href}
+                key={link.href}
+                href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="hover:text-[#A4BCE5] transition-colors duration-200"
+                className="block text-base font-medium text-slate-300 hover:text-white"
               >
-                {label}
+                {link.label}
               </a>
             ))}
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </header>
   );
 }
