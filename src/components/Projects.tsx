@@ -34,7 +34,7 @@ export default function Projects() {
                   alt={project.title}
                   fill
                   className={
-                    project.image.endsWith(".svg")
+                    project.image.includes("fmwhite")
                       ? "object-contain p-6"
                       : "object-cover"
                   }

@@ -15,7 +15,7 @@ export const PROJECTS: Project[] = [
     subtitle: "Sistema de Gestión Aeroportuaria",
     description:
       "Plataforma integral para aeródromos. Incluye gestión de clientes, socios, alumnos y proveedores. Integra facturación electrónica vía API ARCA, módulo contable con cuenta corriente y procesamiento automático de facturas/tickets mediante IA. Generación y exportación de reportes y comprobantes en PDF y Excel, junto con gestión avanzada de roles y permisos.",
-    image: "/iconFMWHITE.svg",
+    image: "/fmwhite.png",
     tags: [
       "React",
       "TypeScript",
@@ -43,7 +43,7 @@ export const PROJECTS: Project[] = [
       "Herramienta desktop para optimizar el proceso de cotización. Permite cargar productos, generar presupuestos personalizados, guardarlos e imprimirlos.",
     image: "/imgAlFe.png",
     tags: ["C#", "HTML5", "CSS3", "JavaScript"],
-    link: "https://www.linkedin.com/posts/tomas-ulman_nuevo-proyecto-publicado-sistema-de-presupuestos-activity-7315814299656945665-OuC1",
+    link: "https://www.linkedin.com/posts/tomas-ulman_nuevo-proyecto-publicado-sistema-de-presupuestos-activity-7315814299656945665-1bMX?utm_source=share&utm_medium=member_desktop&rcm=ACoAADXkflUB1KLK1BlkvbtS8HDrTkf6MC6qCqI",
   },
   {
     id: "safestock",
@@ -53,6 +53,6 @@ export const PROJECTS: Project[] = [
       "Aplicación web desarrollada durante el bootcamp de Soy Henry para la gestión de inventario en PyMEs, control de stock y alertas de reposición.",
     image: "/imgSafeStock.png",
     tags: ["React", "TypeScript", "Tailwind CSS", "Node.js"],
-    link: "https://www.linkedin.com/posts/tomas-ulman_proyecto-final-durante-el-desaf%C3%ADo-grupal-activity-7336136787758583812-uJPA",
+    link: "https://www.linkedin.com/posts/tomas-ulman_proyecto-final-durante-el-desaf%C3%ADo-grupal-activity-7336136787758583812-e5EN?utm_source=share&utm_medium=member_desktop&rcm=ACoAADXkflUB1KLK1BlkvbtS8HDrTkf6MC6qCqI",
   },
 ];
