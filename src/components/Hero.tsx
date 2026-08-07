@@ -27,7 +27,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-xl sm:text-2xl font-medium text-slate-300">
-            Frontend Developer
+            FullStack Developer
           </p>
 
           <p className="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl">
